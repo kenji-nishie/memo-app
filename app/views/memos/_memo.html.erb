@@ -1,0 +1,15 @@
+<div class="content_post"  >
+      <% if user_signed_in? && current_user.id == memo.user_id %>
+        <div class="more2">
+          <span><%= link_to 'SHOW', "/memos/#{memo.id}", method: :get %></span>
+        </div>
+        <div class="more3">
+          <%= link_to 'EDIT', "/memos/#{memo.id}/edit", method: :get %>
+        </div>
+        <div class="more4">
+          <%= link_to 'DESTROY', "/memos/#{memo.id}", method: :delete %>
+        </div>
+      <% end %>
+        <%= simple_format(memo.text) %>
+    </span>
+</div>
